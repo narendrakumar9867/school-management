@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/api", schoolRoutes);
 
 sequelize.sync().then(() => {
-    app.listen(PORT, () => {
+    app.listen(PORT, "0.0.0.0", () => {
         console.log(`Server is running on ${PORT}`);
     });
 }).catch(err => {
