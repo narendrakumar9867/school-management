@@ -3,7 +3,7 @@ const School = require("../models/school-model.js");
 async function addSchool(req, res) {
     const { name, address, latitude, longitude } = req.body;
 
-    if(name || !address || !latitude || !longitude) {
+    if(!name || !address || !latitude || !longitude) {
         return res.status(400).json({
             msg: "All fields are required."
         });
